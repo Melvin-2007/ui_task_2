@@ -37,7 +37,7 @@ class LoginView extends StatelessWidget {
                   SizedBox(height: 8),
                   AppButton(label: "Forgot password?", isFilled: false),
                   SizedBox(height: 16),
-                  AppButton(label: "Login", isFilled: true, labelColor: AppColors.white, onTap: () {}),
+                  AppButton(label: "Login", isFilled: true, labelColor: AppColors.white),
                   SizedBox(height: 8),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
