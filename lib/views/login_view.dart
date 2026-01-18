@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -69,7 +71,12 @@ class LoginView extends StatelessWidget {
                     alignment: Alignment.center,
                     height: 40,
                     child: ListView.separated(
-                      itemBuilder: (context, index) => SvgPicture.asset(socialMediaIcons[index], height: 40, width: 40),
+                      itemBuilder: (context, index) => InkWell(
+                        onTap: () {
+                          log("Tapped on social media button");
+                        },
+                        child: SvgPicture.asset(socialMediaIcons[index], height: 40, width: 40),
+                      ),
                       separatorBuilder: (context, _) => SizedBox(width: 8),
                       itemCount: socialMediaIcons.length,
                       scrollDirection: Axis.horizontal,
