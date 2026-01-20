@@ -13,18 +13,24 @@ class PersonalizeView extends StatefulWidget {
 }
 
 class _PersonalizeViewState extends State<PersonalizeView> {
-  List<String> experiences = [
-    "User Interface",
-    "User Experience",
-    "User Research",
-    "UX Writing",
-    "User Testing",
-    "Service Design",
-    "Strategy",
-    "Design System",
-  ];
+  late List<String> experiences;
+  late List<int> selectedIndexes;
 
-  List<int> selectedIndexes = [];
+  @override
+  void initState() {
+    selectedIndexes = [];
+    experiences = [
+      "User Interface",
+      "User Experience",
+      "User Research",
+      "UX Writing",
+      "User Testing",
+      "Service Design",
+      "Strategy",
+      "Design System",
+    ];
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
