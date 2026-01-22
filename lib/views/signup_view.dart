@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:task_6/config/app_colors.dart';
+import 'package:task_6/widgets/app_back_button.dart';
 import 'package:task_6/widgets/app_button.dart';
 import 'package:task_6/widgets/app_text_field.dart';
 
@@ -15,6 +16,8 @@ class SignupView extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            AppBackButton(),
+            SizedBox(height: 16),
             Text(
               'Sign up',
               style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.w800, color: AppColors.black),

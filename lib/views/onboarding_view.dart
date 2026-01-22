@@ -3,6 +3,7 @@ import 'package:flutter/gestures.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:task_6/config/app_colors.dart';
 import 'package:task_6/views/personalize_view.dart';
+import 'package:task_6/widgets/app_back_button.dart';
 import 'package:task_6/widgets/app_button.dart';
 import 'package:task_6/widgets/dot_indicator.dart';
 
@@ -42,8 +43,12 @@ class _OnboardingViewState extends State<OnboardingView> {
                 },
                 itemBuilder: (context, index) {
                   return Container(
-                    color: Colors.blueAccent,
-                    child: Image.network(images[index], fit: BoxFit.cover),
+                    decoration: BoxDecoration(
+                      image: DecorationImage(image: NetworkImage(images[index]), fit: BoxFit.cover),
+                    ),
+                    padding: EdgeInsets.only(top: 16, left: 8),
+                    alignment: Alignment.topLeft,
+                    child: AppBackButton(),
                   );
                 },
               ),

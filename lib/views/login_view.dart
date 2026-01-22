@@ -4,7 +4,9 @@ import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:task_6/config/app_assets.dart';
 import 'package:task_6/config/app_colors.dart';
+import 'package:task_6/views/onboarding_view.dart';
 import 'package:task_6/views/signup_view.dart';
+import 'package:task_6/widgets/app_back_button.dart';
 import 'package:task_6/widgets/app_button.dart';
 import 'package:task_6/widgets/app_text_field.dart';
 
@@ -21,7 +23,7 @@ class LoginView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image.asset('assets/images/bg_image.png', height: 312, width: 468, fit: BoxFit.cover),
+            Image.asset('assets/images/bg_image.png', height: 312, width: double.infinity, fit: BoxFit.cover),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 32),
               child: Column(
@@ -38,7 +40,14 @@ class LoginView extends StatelessWidget {
                   SizedBox(height: 8),
                   AppButton(label: "Forgot password?", isFilled: false),
                   SizedBox(height: 16),
-                  AppButton(label: "Login", isFilled: true, labelColor: AppColors.white),
+                  AppButton(
+                    label: "Login",
+                    isFilled: true,
+                    labelColor: AppColors.white,
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const OnboardingView()));
+                    },
+                  ),
                   SizedBox(height: 8),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,

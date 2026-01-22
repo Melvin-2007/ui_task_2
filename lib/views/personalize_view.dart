@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:task_6/config/app_colors.dart';
+import 'package:task_6/models/personalize_model.dart';
+import 'package:task_6/widgets/app_back_button.dart';
 import 'package:task_6/widgets/app_button.dart';
 import 'package:task_6/widgets/app_check_box.dart';
 import 'package:task_6/widgets/app_progress_bar.dart';
@@ -13,21 +15,18 @@ class PersonalizeView extends StatefulWidget {
 }
 
 class _PersonalizeViewState extends State<PersonalizeView> {
-  late List<String> experiences;
-  late List<int> selectedIndexes;
+  late List<PersonalizeModel> personalizeList;
 
   @override
   void initState() {
-    selectedIndexes = [];
-    experiences = [
-      "User Interface",
-      "User Experience",
-      "User Research",
-      "UX Writing",
-      "User Testing",
-      "Service Design",
-      "Strategy",
-      "Design System",
+    personalizeList = [
+      PersonalizeModel(experience: "User Experience"),
+      PersonalizeModel(experience: "User Research"),
+      PersonalizeModel(experience: "UX Writing"),
+      PersonalizeModel(experience: "User Testing"),
+      PersonalizeModel(experience: "Service Design"),
+      PersonalizeModel(experience: "Strategy"),
+      PersonalizeModel(experience: "Design System"),
     ];
     super.initState();
   }
@@ -40,7 +39,12 @@ class _PersonalizeViewState extends State<PersonalizeView> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            AppProgressBar(total: experiences.length, completed: selectedIndexes.length),
+            AppBackButton(),
+            SizedBox(height: 16),
+            AppProgressBar(
+              total: personalizeList.length,
+              completed: personalizeList.where((model) => model.isSelected).length,
+            ),
             SizedBox(height: 24),
             Text(
               'Personalize your experience',
@@ -55,24 +59,19 @@ class _PersonalizeViewState extends State<PersonalizeView> {
             ListView.separated(
               shrinkWrap: true,
               itemBuilder: (context, index) {
+                final PersonalizeModel model = personalizeList[index];
                 return AppCheckBox(
-                  isChecked: selectedIndexes.contains(index),
-                  label: experiences[index],
-                  onChanged: (isSelected) {
-                    if (isSelected) {
-                      setState(() {
-                        selectedIndexes.add(index);
-                      });
-                    } else {
-                      setState(() {
-                        selectedIndexes.remove(index);
-                      });
-                    }
+                  isChecked: model.isSelected,
+                  label: model.experience,
+                  onChanged: (value) {
+                    setState(() {
+                      model.isSelected = value;
+                    });
                   },
                 );
               },
               separatorBuilder: (context, _) => SizedBox(height: 16),
-              itemCount: experiences.length,
+              itemCount: personalizeList.length,
             ),
             Spacer(),
             AppButton(label: "Next", isFilled: true, labelColor: AppColors.white, onTap: () {}),
