@@ -18,24 +18,26 @@ class AppButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(
-      onPressed: () {
+    return GestureDetector(
+      onTap: () {
         log("Button tapped");
         if (onTap != null) {
           onTap!();
         }
       },
-      style: ButtonStyle(
-        minimumSize: isFilled == true ? WidgetStateProperty.all<Size>(Size(double.infinity, 48)) : null,
-        padding: isFilled == false ? WidgetStateProperty.all<EdgeInsets>(EdgeInsets.zero) : null,
-        backgroundColor: isFilled == true ? WidgetStateProperty.all<Color>(AppColors.blue) : null,
-        shape: WidgetStateProperty.all<RoundedRectangleBorder>(
-          RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      child: Container(
+        height: isFilled == true ? 48 : null,
+        width: isFilled == true ? double.infinity : null,
+        padding: isFilled == false ? EdgeInsets.zero : null,
+        alignment: isFilled == true ? Alignment.center : Alignment.centerLeft,
+        decoration: BoxDecoration(
+          color: isFilled == true ? AppColors.blue : null,
+          borderRadius: BorderRadius.circular(12),
         ),
-      ),
-      child: Text(
-        label,
-        style: GoogleFonts.inter(fontSize: 12, fontWeight: FontWeight.w600, color: labelColor),
+        child: Text(
+          label,
+          style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: labelColor),
+        ),
       ),
     );
   }

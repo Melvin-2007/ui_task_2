@@ -4,5 +4,11 @@ import 'package:task_6/views/onboarding_view.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(MaterialApp(home: LoginView(), debugShowCheckedModeBanner: false));
+  runApp(
+    MaterialApp(
+      home: LoginView(),
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(fontFamily: "Inter"),
+    ),
+  );
 }

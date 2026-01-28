@@ -20,30 +20,30 @@ class SignupView extends StatelessWidget {
             SizedBox(height: 16),
             Text(
               'Sign up',
-              style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.w800, color: AppColors.black),
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w800, color: AppColors.black),
             ),
             Text(
               'Create an account to get started',
-              style: GoogleFonts.inter(fontSize: 12, fontWeight: FontWeight.w400, color: AppColors.grey2),
+              style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400, color: AppColors.grey2),
             ),
             SizedBox(height: 24),
             Text(
               'Name',
-              style: GoogleFonts.inter(fontSize: 12, fontWeight: FontWeight.w700, color: AppColors.black),
+              style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: AppColors.black),
             ),
             SizedBox(height: 8),
             AppTextField(hintText: "Name", isPassword: false),
             SizedBox(height: 16),
             Text(
               'Email Address',
-              style: GoogleFonts.inter(fontSize: 12, fontWeight: FontWeight.w700, color: AppColors.black),
+              style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: AppColors.black),
             ),
             SizedBox(height: 8),
             AppTextField(hintText: "name@email.com", isPassword: false),
             SizedBox(height: 16),
             Text(
               'Password',
-              style: GoogleFonts.inter(fontSize: 12, fontWeight: FontWeight.w700, color: AppColors.black),
+              style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: AppColors.black),
             ),
             SizedBox(height: 8),
             AppTextField(hintText: "Create a password", isPassword: true),
@@ -72,13 +72,13 @@ class SignupView extends StatelessWidget {
                     children: [
                       Text(
                         "I've read and agree with the ",
-                        style: GoogleFonts.inter(fontSize: 12, fontWeight: FontWeight.w400, color: AppColors.grey2),
+                        style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400, color: AppColors.grey2),
                       ),
                       AppButton(label: "Terms and", isFilled: false),
                       AppButton(label: "Conditions", isFilled: false),
                       Text(
                         " and the ",
-                        style: GoogleFonts.inter(fontSize: 12, fontWeight: FontWeight.w400, color: AppColors.grey2),
+                        style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400, color: AppColors.grey2),
                       ),
                       AppButton(label: "Privacy Policy.", isFilled: false),
                     ],

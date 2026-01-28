@@ -64,12 +64,12 @@ class _OnboardingViewState extends State<OnboardingView> {
                   SizedBox(height: 24),
                   Text(
                     'Create a prototype in just a few minutes',
-                    style: GoogleFonts.inter(fontSize: 19, fontWeight: FontWeight.w800, color: AppColors.black),
+                    style: TextStyle(fontSize: 19, fontWeight: FontWeight.w800, color: AppColors.black),
                   ),
                   SizedBox(height: 16),
                   Text(
                     'Enjoy these pre-made components and worry only about creating the best product ever.',
-                    style: GoogleFonts.inter(fontSize: 10, fontWeight: FontWeight.w400, color: AppColors.grey2),
+                    style: TextStyle(fontSize: 10, fontWeight: FontWeight.w400, color: AppColors.grey2),
                   ),
                   Spacer(),
                   AppButton(

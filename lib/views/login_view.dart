@@ -31,7 +31,7 @@ class LoginView extends StatelessWidget {
                 children: [
                   Text(
                     'Welcome!',
-                    style: GoogleFonts.inter(fontSize: 24, fontWeight: FontWeight.w800, color: AppColors.black),
+                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.w800, color: AppColors.black),
                   ),
                   SizedBox(height: 20),
                   AppTextField(hintText: "Email Address", isPassword: false),
@@ -54,7 +54,7 @@ class LoginView extends StatelessWidget {
                     children: [
                       Text(
                         'Not a member? ',
-                        style: GoogleFonts.inter(fontSize: 12, fontWeight: FontWeight.w400, color: AppColors.grey2),
+                        style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400, color: AppColors.grey2),
                       ),
                       AppButton(
                         label: "Register now",
@@ -71,7 +71,7 @@ class LoginView extends StatelessWidget {
                   Center(
                     child: Text(
                       'Or continue with',
-                      style: GoogleFonts.inter(fontSize: 12, fontWeight: FontWeight.w400, color: AppColors.grey2),
+                      style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400, color: AppColors.grey2),
                     ),
                   ),
                   SizedBox(height: 16),

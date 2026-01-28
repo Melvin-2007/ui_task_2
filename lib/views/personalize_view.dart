@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:task_6/config/app_colors.dart';
 import 'package:task_6/models/personalize_model.dart';
+import 'package:task_6/views/chat_view.dart';
 import 'package:task_6/widgets/app_back_button.dart';
 import 'package:task_6/widgets/app_button.dart';
 import 'package:task_6/widgets/app_check_box.dart';
@@ -48,12 +49,12 @@ class _PersonalizeViewState extends State<PersonalizeView> {
             SizedBox(height: 24),
             Text(
               'Personalize your experience',
-              style: GoogleFonts.inter(fontSize: 21, fontWeight: FontWeight.w800, color: AppColors.black),
+              style: TextStyle(fontSize: 21, fontWeight: FontWeight.w800, color: AppColors.black),
             ),
             SizedBox(height: 8),
             Text(
               'Choose your interests.',
-              style: GoogleFonts.inter(fontSize: 12, fontWeight: FontWeight.w400, color: AppColors.grey2),
+              style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400, color: AppColors.grey2),
             ),
             SizedBox(height: 24),
             ListView.separated(
@@ -74,7 +75,12 @@ class _PersonalizeViewState extends State<PersonalizeView> {
               itemCount: personalizeList.length,
             ),
             Spacer(),
-            AppButton(label: "Next", isFilled: true, labelColor: AppColors.white, onTap: () {}),
+            AppButton(
+              label: "Next",
+              isFilled: true,
+              labelColor: AppColors.white,
+              onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const ChatView())),
+            ),
           ],
         ),
       ),

@@ -30,7 +30,7 @@ class AppCheckBox extends StatelessWidget {
             children: [
               Text(
                 label,
-                style: GoogleFonts.inter(fontSize: 13, fontWeight: FontWeight.w400, color: AppColors.black2),
+                style: TextStyle(fontSize: 13, fontWeight: FontWeight.w400, color: AppColors.black2),
               ),
               if (isChecked) SvgPicture.asset(AppAssets.check, width: 16, height: 16),
             ],

@@ -13,12 +13,12 @@ class AppTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextField(
       obscureText: isPassword,
-      style: GoogleFonts.inter(color: AppColors.black, fontSize: 14, fontWeight: FontWeight.w400),
+      style: TextStyle(color: AppColors.black, fontSize: 14, fontWeight: FontWeight.w400),
       cursorColor: AppColors.blue,
       decoration: InputDecoration(
         hintText: hintText,
         contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-        hintStyle: GoogleFonts.inter(color: AppColors.grey5, fontSize: 14, fontWeight: FontWeight.w400),
+        hintStyle: TextStyle(color: AppColors.grey5, fontSize: 14, fontWeight: FontWeight.w400),
         filled: false,
         fillColor: AppColors.white,
         suffixIcon: isPassword
