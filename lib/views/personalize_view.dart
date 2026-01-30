@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:task_6/config/app_colors.dart';
 import 'package:task_6/models/personalize_model.dart';
 import 'package:task_6/views/chat_view.dart';
+import 'package:task_6/views/home_view.dart';
 import 'package:task_6/widgets/app_back_button.dart';
 import 'package:task_6/widgets/app_button.dart';
 import 'package:task_6/widgets/app_check_box.dart';
@@ -79,7 +80,7 @@ class _PersonalizeViewState extends State<PersonalizeView> {
               label: "Next",
               isFilled: true,
               labelColor: AppColors.white,
-              onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const ChatView())),
+              onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const HomeView())),
             ),
           ],
         ),

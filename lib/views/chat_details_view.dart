@@ -38,6 +38,7 @@ class _ChatDetailsViewState extends State<ChatDetailsView> {
   void initState() {
     controller = TextEditingController();
     scrollController = ScrollController();
+    scrollList(milliseconds: 300);
     super.initState();
   }
 

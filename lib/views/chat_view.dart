@@ -235,52 +235,19 @@ class ChatView extends StatefulWidget {
 class _ChatViewState extends State<ChatView> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.white,
-      bottomNavigationBar: AppBottomNavBar(),
-      body: Stack(
+    return SingleChildScrollView(
+      padding: EdgeInsets.all(16),
+      child: Column(
         children: [
-          SingleChildScrollView(
-            padding: EdgeInsets.all(16),
-            child: Column(
-              children: [
-                SizedBox(height: 54),
-                AppSearchBar(),
-                SizedBox(height: 24),
-                ListView.separated(
-                  shrinkWrap: true,
-                  itemBuilder: (context, index) =>
-                      ChatTile(userModel: ChatView.users[index], onMessageSend: () => setState(() {})),
-                  separatorBuilder: (context, _) => SizedBox(height: 24),
-                  itemCount: ChatView.users.length,
-                ),
-              ],
-            ),
-          ),
-          CustomAppBar(
-            title: "Chats",
-            padding: EdgeInsets.symmetric(vertical: 24, horizontal: 16),
-
-            leftIcon: GestureDetector(
-              onTap: () {
-                log("Edit text tapped");
-              },
-              child: Text(
-                "Edit",
-                style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: Colors.blue),
-              ),
-            ),
-            rightIcon: GestureDetector(
-              onTap: () {
-                log("Edit Button tapped");
-              },
-              child: SvgPicture.asset(
-                AppAssets.edit,
-                height: 20,
-                width: 20,
-                colorFilter: ColorFilter.mode(AppColors.blue, BlendMode.srcIn),
-              ),
-            ),
+          SizedBox(height: 54),
+          AppSearchBar(),
+          SizedBox(height: 24),
+          ListView.separated(
+            shrinkWrap: true,
+            itemBuilder: (context, index) =>
+                ChatTile(userModel: ChatView.users[index], onMessageSend: () => setState(() {})),
+            separatorBuilder: (context, _) => SizedBox(height: 24),
+            itemCount: ChatView.users.length,
           ),
         ],
       ),
